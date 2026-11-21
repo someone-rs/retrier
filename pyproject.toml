@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "retrier"
+version = "1.0.0"
+description = "Run any command with smart retries — exponential backoff, jitter, exit-code and output matching, per-attempt timeouts"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "someone-rs" }]
+requires-python = ">=3.9"
+keywords = ["retry", "backoff", "cli", "resilience", "automation"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: System :: Shells",
+    "Topic :: Utilities",
+]
+
+[project.urls]
+Homepage = "https://github.com/someone-rs/retrier"
+Repository = "https://github.com/someone-rs/retrier"
+Issues = "https://github.com/someone-rs/retrier/issues"
+
+[project.scripts]
+retrier = "retrier.cli:main"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
